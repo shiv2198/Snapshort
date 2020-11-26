@@ -5,19 +5,21 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<h2>Select an image to upload and display</h2>
+<h2>Select an image to upload</h2>
 <p>
 	{% with messages = get_flashed_messages() %}
 	  {% if messages %}
 		<ul class=flashes>
 		{% for message in messages %}
 		  <li>{{ message }}</li>
-		  <li>{{ text }}</li>
 		{% endfor %}
 		</ul>
 	  {% endif %}
 	{% endwith %}
 </p>
+
+
+
 {% if filename %}
 	<div>
 		<img src="{{ url_for('display_image', filename=filename) }}">
@@ -36,6 +38,21 @@
 	</p>
 </form>
 
+<h3>ACTUAL TEXT FROM IMAGE</h3>
+<div>
+	<p>
+		{{ text }}
+	</p>
+</div>
+
+<br>
+<br>
+<h3>SUMMARY</h3>
+<div>
+	<p>
+		{{ summary }}
+	</p>
+</div>
 
 
 {% endblock %}

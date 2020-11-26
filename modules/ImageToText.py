@@ -4,6 +4,7 @@ import numpy as np
 import cv2
 import re
 
+pt.pytesseract.tesseract_cmd = r'C:/Program Files/Tesseract-OCR/tesseract.exe'
 
 def imageToText(filename):
     pattern = "[^\x00-\x7F]+"
